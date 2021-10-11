@@ -1,0 +1,207 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: splatoon;
+    src: url(Splatoon2.otf);
+}
+
+.team {
+    font-family: "splatoon";
+    font-size: 124px;
+    color: #fff;
+    position: absolute;
+    bottom: -55px;
+    right: 0;
+    z-index: 9;
+    text-shadow: -4px 3px 0px #00000057;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150vh;
+}
+
+.container {
+    /*overflow: hidden;*/
+    position: relative;
+    margin: auto;
+    width: 1280px;
+    height: 720px;
+    background-color: #fef157;
+}
+
+.one, .two, .three, .four {
+    background-repeat: no-repeat;
+    position: absolute;
+    transition: .2s ease;
+}
+
+.blur {
+    transition: .2s ease;
+    filter: blur(2px);
+}
+
+.blurPlus {
+    filter: blur(3px);
+}
+
+img {
+    width: inherit;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+.one {
+    background-size: contain;
+    height: 770px;
+    width: 617px;
+    top: 48px;
+    left: -44px;
+    z-index: 4;
+}
+
+.two {
+    background-size: contain;
+    height: 870px;
+    width: 517px;
+    top: -219px;
+    left: 381px;
+    z-index: 3;
+}
+
+.three {
+    background-size: contain;
+    height: 702px;
+    width: 500px;
+    top: 56px;
+    left: 574px;
+    z-index: 2;
+}
+
+.four {
+    background-size: contain;
+    height: 496px;
+    width: 284px;
+    top: 156px;
+    left: 970px;
+    z-index: 1;
+}
+
+.one {
+    animation: shake 12s cubic-bezier(0.67, 0.32, 0.4, 0.75) infinite;
+}
+
+.two {
+    animation: shakeTwo 12s cubic-bezier(0.67, 0.32, 0.4, 0.75) infinite;
+    animation-direction: reverse;
+}
+
+  
+.three {
+    animation: shakeTwo 12s cubic-bezier(0.67, 0.32, 0.4, 0.75) infinite;
+}
+
+.four {
+    animation: shake 15s cubic-bezier(0.67, 0.32, 0.4, 0.75) infinite;
+    animation-direction: reverse;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translate3d(-3px, 5px, 0px);
+    }
+
+    20% {
+        transform: translate3d(5px, 8px, 0px);
+    }
+
+    30% {
+        transform: translate3d(-7px, 0px, 0px);
+    }
+
+    40% {
+        transform: translate3d(3px, 7px, 0px);
+    }
+
+    50% {
+        transform: translate3d(6px, -10px, 0px);
+    }
+
+    60% {
+        transform: translate3d(-6px, 9px, 0px);
+    }
+
+    70% {
+        transform: translate3d(-3px, -4px, 0px);
+    }
+
+    80% {
+        transform: translate3d(-8px, 3px, 0px);
+    }
+
+    90% {
+        transform: translate3d(6px, 2px, 0px);
+    }
+}
+
+@keyframes shakeTwo {
+
+    0%,
+    100% {
+        transform: translate3d( 3px, -3px, 0px);
+    }
+
+    20% {
+        transform: translate3d( -5px, 1px, 0px);
+    }
+
+    30% {
+        transform: translate3d( 4px, 1px, 0px);
+    }
+
+    40% {
+        transform: translate3d( -8px, 3px, 0px);
+    }
+
+    50% {
+        transform: translate3d( 2px, -3px, 0px);
+    }
+
+    60% {
+        transform: translate3d( 4px, -9px, 0px);
+    }
+
+    70% {
+        transform: translate3d( 3px, -5px, 0px);
+    }
+
+    80% {
+        transform: translate3d( 1px, 2px, 0px);
+    }
+
+    90% {
+        transform: translate3d( -5px, 8px, 0px);
+    }
+}
+
+@keyframes circle-in-bottom-left {
+    from {
+      clip-path: circle(0%);
+    }
+    to {
+      clip-path: circle(150% at bottom left);
+    }
+  }
+  
+  [transition-style="in:circle:bottom-left"] {
+    animation: 8s cubic-bezier(.25, 1, .30, 1) circle-in-bottom-left both;
+  }
